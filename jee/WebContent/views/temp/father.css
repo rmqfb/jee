@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+.tableClass{    /* css 를 클래스화 시킴 */
+		/* CSS 방식  >> 프로퍼티 : 값; (border : 1px;) */
+		border : 1px solid black;
+		border-collapse: collapse;   /* collapse 는 칸이 두줄로 표시되는 것을 한줄로 만들어줌. */
+		width: 500px;
+		height: 200px;  
+	}

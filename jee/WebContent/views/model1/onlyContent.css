@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+@IMPORT url("../common/common.css");
+#wrap{ /* id는 #을 먼저 입력하고 id 를 적으면 된다 */
+	width: 99%;
+	text-align: left; /* 글자정렬 : 왼쪽 */
+	margin: 0;
+	margin-right: auto; /* 환경에 맞게 자동 설정 */
+	margin-left: auto;
+	background-image: url("<%= request.getContextPath()%>/images/3D_gif_07.gif");
+	background-repeat: repeat-y;
+	/* 만약 배경이미지가 작으면 y축으로 이미지 반복으로 채우겠다. 만약 옆도 채우고 싶으면 repeat-x 도 적어주자 */
+	min-height: 750px;
+	/* 모니터에 따라 신축성 있게 헤더가 축소되지만 최소한 750px 은 유지하고
+	그 이하가 되면 이미지가 잘리도록 하겠다 */
+}   
+article{
+	width: 100%;
+	min-height: 50%;
+	position: relative;
+	z-index: 10;
+	margin: -50px 0;
+	background-color: #FF6; 
+}
+.content{
+	padding-top: 50px;
+}

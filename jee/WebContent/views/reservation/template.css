@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+@Import url("father.css");  
+
+.trClass{
+		border : 1px solid black;
+		height: 50px;
+	}
+.tdClass{
+		border : 1px solid black;
+		text-align: center;
+		background-color: #f5b6f1;
+		color: white;
+		width: 150px;
+	}
+.tdClass2{
+		border : 1px solid black;
+		text-align: center;
+	}

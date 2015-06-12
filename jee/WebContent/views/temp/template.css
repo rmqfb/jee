@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+/* css는 jsp와 같은 파일명을 써야 한다. */
+
+@Import url("father.css");  /* 상속이 가능 하다 */
+
+.trClass{
+		border : 1px solid black;
+		height: 50px;
+	}
+.tdClass{
+		border : 1px solid black;
+		text-align: center;
+		background-color: #f5b6f1;
+		color: white;
+		width: 150px;
+	}
+.tdClass2{
+		border : 1px solid black;
+		text-align: center;
+	}
