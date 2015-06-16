@@ -37,13 +37,13 @@
 	            for (int j = 0; j < defaultSeat[i].length; j++) {
 	                if (defaultSeat[i][j] == null) {
 	                	%>
-	                	<%="□" %> <%= i+1%> - <%= j+1%> 호  
+	                	<%="□" %> <%= i%> - <%= j%> 호  
 	                            <%
 	                    /* System.out.print("" + (i + 1) + "0" + (j + 1) + "호"
 	                            + " □\t" + "\t"); */
 	                } else {
 	                	%>
-	                		■ <%= i+1%> - <%= j+1%> 호  
+	                		■ <%= i%> - <%= j%> 호  
 	                		<%-- ${i + 1} 0 ${j + 1} 호 ■ <br /> --%>
 	                	<%
 	                    /* System.out.print("" + (i + 1) + "0" + (j + 1) + "호"
@@ -55,18 +55,18 @@
 	            <%
 	        }
 		}else{
-			String[][] seat = (String[][])request.getAttribute("seat");
+			String[][] seat = new String[3][5]; // 투숙객 이름
 			for (int i = 0; i < seat.length; i++) {
 	            for (int j = 0; j < seat[i].length; j++) {
 	                if (seat[i][j] == null) {
 	                	%>
-	                	<%="□" %> <%= i+1%> - <%= j+1%> 호  
+	                	<%="□" %> <%= i%> - <%= j%> 호  
 	                            <%
 	                    /* System.out.print("" + (i + 1) + "0" + (j + 1) + "호"
 	                            + " □\t" + "\t"); */
 	                } else {
 	                	%>
-	                		■ <%= i+1%> - <%= j+1%> 호  
+	                		■ <%= i%> - <%= j%> 호  
 	                		<%-- ${i + 1} 0 ${j + 1} 호 ■ <br /> --%>
 	                	<%
 	                    /* System.out.print("" + (i + 1) + "0" + (j + 1) + "호"
@@ -78,11 +78,34 @@
 	            <%
 	        }
 		}
+		String[][] name = new String[3][5]; // 투숙객 이름
+		for (int i = 0; i < name.length; i++) {
+            for (int j = 0; j < name[i].length; j++) {
+                if (name[i][j] == null) {
+                	%>
+                	<%="□" %> <%= i + 1%> - <%= j + 1%> 호  
+                            <%
+                    /* System.out.print("" + (i + 1) + "0" + (j + 1) + "호"
+                            + " □\t" + "\t"); */
+                } else {
+                	%>
+                		■ <%= i + 1%> - <%= j + 1%> 호  
+                		<%-- ${i + 1} 0 ${j + 1} 호 ■ <br /> --%>
+                	<%
+                    /* System.out.print("" + (i + 1) + "0" + (j + 1) + "호"
+                            + " ■\t" + name[i][j] + "\t"); */
+                }
+            }
+            %>
+            <br />
+            <% 
+        }
+	    
 		
 		%>
 	</div>
 	<div>
-	<form action="<%=request.getContextPath() %>/reservation/checkIn.do">  <!-- 웹프로그램과 연동하기 위한 태그 -->
+	<form action="<%=request.getContextPath() %>/reservation/checkIn2.do">  <!-- 웹프로그램과 연동하기 위한 태그 -->
 	<fieldset>
 			<legend>주문 내용</legend>
 			<ol>
