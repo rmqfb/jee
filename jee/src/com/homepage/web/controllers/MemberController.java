@@ -12,18 +12,39 @@ import javax.servlet.http.HttpServletResponse;
 import com.homepage.web.beans.MemberBean;
 import com.homepage.web.serviceimpls.MemberServiceImpl;
 import com.homepage.web.services.MemberService;
+import com.sun.corba.se.spi.protocol.RequestDispatcherDefault;
 
 /**
  * @ Date : 2015.6.15;
  * @ Author : 킴요!;
  * @ Story : 회원가입과 로그인 담당하는 컨트롤러;
  */
-@WebServlet({"/model2/join.do","/model2/login.do"})
+@WebServlet({"/model2/join.do","/model2/login.do",
+			"/member/searchIdForm.do","/member/searchPassForm.do"})
 public class MemberController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	MemberService service = new MemberServiceImpl();
 	MemberBean bean = new MemberBean();
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)  // 자동완성 했을때 변수(현재는 객체)가 달라서 오류가 날 수 있기 때문에 확인해서 다르면 수정해준다.
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String path = request.getServletPath();
+		switch(path){
+			case "/member/searchIdForm.do" : 
+				RequestDispatcher dispatcher2 = request.getRequestDispatcher("/views/model2/searchIdForm.jsp");
+				dispatcher2.forward(request, response);
+				break;
+			case "/member/searchPassForm.do" : 
+				RequestDispatcher dispatcher3 = request.getRequestDispatcher("/views/model2/searchPassForm.jsp");
+				dispatcher3.forward(request, response);
+				break;
+			default:
+				break;
+		}
+	}
+	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -54,7 +75,14 @@ public class MemberController extends HttpServlet {
 			dispatcher.forward(request, response);
 			break;
 		case "/model2/login.do":  goLogin(request, response); break;
-
+		case "/member/searchIdForm.do" : 
+			RequestDispatcher dispatcher2 = request.getRequestDispatcher("/views/model2/searchIdForm.jsp");
+			dispatcher2.forward(request, response);
+			break;
+		case "/member/searchPassForm.do" : 
+			RequestDispatcher dispatcher3 = request.getRequestDispatcher("/views/model2/searchPassForm.jsp");
+			dispatcher3.forward(request, response);
+			break;
 		default:
 			dispatcher = request.getRequestDispatcher("/views/model2/memberFail.jsp");
 			dispatcher.forward(request, response);

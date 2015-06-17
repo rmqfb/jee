@@ -18,30 +18,31 @@ import com.homepage.web.services.ReservationService;
 */
 @WebServlet({"/reservation/checkIn.do","/reservation/checkOut.do"})
 public class ReservationController extends HttpServlet {
-	String[][] seat = new String[3][5]; 
+	
 	private static final long serialVersionUID = 1L;
     ReservationService service = new ReservationServiceImpl();
-   
+    String[][] seat = new String[3][5];
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
         int floor = Integer.parseInt(request.getParameter("floor"))-1;
         int row=Integer.parseInt(request.getParameter("row"))-1;
         String id = request.getParameter("id");
-        String msg = "";
 		String path = request.getServletPath();
-		seat[floor][row] = id;
+		
         switch (path) {
         case "/reservation/checkIn.do":
-        	msg=service.checkIn(floor,row,id);
+        	String msg=service.checkIn(floor,row,id);
+        	seat[floor][row] = id; 
         	request.setAttribute("seat",seat);
         	request.setAttribute("msg",msg);
-        	
         	RequestDispatcher dispatcher = request.getRequestDispatcher("/views/model2/reservationForm.jsp");
            	dispatcher.forward(request, response);
             break; // 체크인
         case "/reservation/checkOut.do":
-        	msg=service.checkOut(floor,row,id);
-        	request.setAttribute("msg", msg);
+        	String msg2=service.checkOut(floor,row,id);
+        	seat[floor][row] = null;
+        	request.setAttribute("msg", msg2);
+        	request.setAttribute("seat",seat);
         	   RequestDispatcher dispatcher1 = request.getRequestDispatcher("/views/model2/reservationForm.jsp");
            	dispatcher1.forward(request, response);
             break; // 체크아웃

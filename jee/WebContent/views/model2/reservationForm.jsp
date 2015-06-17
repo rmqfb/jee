@@ -87,7 +87,31 @@
 			<legend>주문 내용</legend>
 			<ol>
 				<li>
-					<label for="prod">좌석</label>
+					<label for="prod">아이디</label>
+					<input type="text" name="id" id="id" placeholder="아이디를 입력하세요"/>
+				</li>
+				<li>
+					<label for="num">열번호</label>
+					<input id="floor" name="floor" type="number" min="1" max="3" value="1" />
+				</li>
+				<li>
+					<label for="num">행번호</label>
+					<input id="row" name="row" type="number" min="1" max="5" value="1" />
+				</li>
+			</ol>
+		</fieldset>
+		
+		
+		<input type="submit" value="등록" />
+	</form>
+	</div>
+		<div>
+	<form action="<%=request.getContextPath() %>/reservation/checkOut.do">  <!-- 웹프로그램과 연동하기 위한 태그 -->
+	<fieldset>
+			<legend>예매 취소</legend>
+			<ol>
+				<li>
+					<label for="prod">아이디</label>
 					<input type="text" name="id" id="id" placeholder="아이디를 입력하세요"/>
 				</li>
 				<li>

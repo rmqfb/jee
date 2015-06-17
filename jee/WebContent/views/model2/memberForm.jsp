@@ -9,6 +9,14 @@
 		@IMPORT url("../../css/model2/kaup.css");
 	</style>
 	<script type="text/javascript">
+	function searchId(){
+		window.open("<%=request.getContextPath()%>/member/searchIdForm.do", "searchId", 
+				"scrollbar,toolbar=no,location=no,directories=no,status=no,menubar=yes,resizable=yes,width=600,height=500,top=200,left=400")
+	}
+	function searchPass() {
+		window.open("<%= request.getContextPath()%>/member/searchPassForm.do", "searchPass", 
+				"scrollbar,toolbar=no,location=no,directories=no,status=no,menubar=yes,resizable=yes,width=600,height=500,top=200,left=400")
+	}
 	function join() {
 		<%-- location.href = "<%=request.getContextPath()%>/member/joinForm.do"; --%>
 		document.frmJoin.submit();
@@ -76,6 +84,8 @@
 	</form>
 	
 	<form action="<%= request.getContextPath() %>/model2/login.do" method="post" name = "frmLogin">
+		<fieldset>
+		<legend>로그인</legend>
 		<table>
 			<tr>
 				<td>아이디 : </td>
@@ -96,6 +106,15 @@
 				</td>
 			</tr>
 		</table>
+		</fieldset>
 	</form>
+	<div>
+		<span>
+			<a href="#" onclick="searchId()">아이디 찾기</a>
+		</span>
+		<span>
+			<a href="#" onclick="searchPass()">비밀번호 찾기</a>
+		</span>
+	</div>
 </body>
 </html>
