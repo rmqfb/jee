@@ -32,12 +32,12 @@ public class ReservationControllerMine extends HttpServlet {
 	}
 	private void goResult(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  goData(request);
-	  RequestDispatcher dispatcher = request.getRequestDispatcher("/library/reservation/resultForm.jsp");
+	  RequestDispatcher dispatcher = request.getRequestDispatcher("/views/reservation/resultForm.jsp");
 	  dispatcher.forward(request, response);
 	}
 	 private void goDel(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  goData(request);
-	  RequestDispatcher dispatcher = request.getRequestDispatcher("/library/reservation/delForm.jsp");
+	  RequestDispatcher dispatcher = request.getRequestDispatcher("/views/reservation/delForm.jsp");
 	  dispatcher.forward(request, response);
 	 }
 	 private void goData(HttpServletRequest request) {
