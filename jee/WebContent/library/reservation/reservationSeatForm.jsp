@@ -7,7 +7,7 @@
  <title>예약 페이지</title>
 </head>
 <body>
- <form action="<%= request.getContextPath()%>/result.do" method="get">
+ <form action="<%= request.getContextPath()%>/result.soso" method="get">
  
   <fieldset>
   <table style="border: 1px solid black; border-collapse: collapse;">

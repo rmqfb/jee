@@ -1,4 +1,4 @@
-package com.homepage.web.controllers;
+package com.homepage.reservation.controllers;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class reservationControllerMine
  */
-@WebServlet({"/result.do","/del.do"})
+@WebServlet({"/result.soso","/del.soso"})
 public class ReservationControllerMine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	 String memberId;
@@ -23,8 +23,8 @@ public class ReservationControllerMine extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		  switch (request.getServletPath()) {
-		  case "/result.do" : goResult(request, response); break;
-		  case "/del.do" : goDel(request, response); break;
+		  case "/result.soso" : goResult(request, response); break;
+		  case "/del.soso" : goDel(request, response); break;
 		  default:
 			   System.out.println("페이지 없음");
 			   break;

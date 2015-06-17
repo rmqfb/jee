@@ -9,7 +9,7 @@
 <body>
  <div>
   <h3>예약 완료</h3>
-  <form action="<%= request.getContextPath()%>/del.do">
+  <form action="<%= request.getContextPath()%>/del.soso">
   <%= request.getAttribute("memberId") %> 님의 예약이 완료 되었습니다. <br />
   <mark>자리번호 확인 : <%= request.getAttribute("seatNo") %></mark>
   <mark>시간 확인 : <%= request.getAttribute("wanted") %>  <%= request.getAttribute("time") %></mark>
