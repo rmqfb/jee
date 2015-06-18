@@ -1,14 +1,14 @@
 
 public class R​eservationBean {
-	private int positionNumber;  // 자리번호
+	private int seatNo;  // 자리번호
 	private String dateAndTime;  // 날짜 및 시간
 	private int awaiter;		// 대기자
 	
 	public int getPositionNumber() {
-		return positionNumber;
+		return seatNo;
 	}
-	public void setPositionNumber(int positionNumber) {
-		this.positionNumber = positionNumber;
+	public void setPositionNumber(int seatNo) {
+		this.seatNo = seatNo;
 	}
 	public String getDateAndTime() {
 		return dateAndTime;
