@@ -2,8 +2,8 @@ package com.homepage.web.beans;
 
 public class MemberBean {
 	private String name;
-	private String addr;
-	private int age;
+	private String email;
+	private String age;
 	private String id;
 	private String password;
 
@@ -13,16 +13,16 @@ public class MemberBean {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAddr() {
-		return addr;
+	public String getEmail() {
+		return email;
 	}
-	public void setAddr(String addr) {
-		this.addr = addr;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 	public String getId() {
